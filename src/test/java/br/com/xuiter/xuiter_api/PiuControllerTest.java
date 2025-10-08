@@ -10,7 +10,7 @@ import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.assertj.MockMvcTester;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 @SpringBootTest
@@ -25,6 +25,6 @@ public class PiuControllerTest {
     void t1() throws Exception {
         mockMvc.perform(get("/piu"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect((ResultMatcher) content().string("TESTE"));
+                .andExpect(content().string("TESTE"));
     }
 }
